@@ -27,18 +27,13 @@ public class DemoTest {
         driver.findElement(By.cssSelector("label[for='opt-1']")).click();
         Thread.sleep(5000);
         driver.findElement(By.cssSelector("input[name='234']")).click();
-        //fillimg form
+        //filling form
         driver.findElement(By.cssSelector("input[placeholder='Name*']")).sendKeys("Arun");
         driver.findElement(By.cssSelector("input[placeholder='Email*']")).sendKeys("akr7205@gmail.com");
         driver.findElement(By.cssSelector("input[placeholder='Room No. *']")).sendKeys("107");
         driver.findElement(By.cssSelector("input[placeholder='Student No.']")).sendKeys("23500");
         driver.findElement(By.cssSelector("input[placeholder='Ticket Title *']")).sendKeys("tickettile");
-        //clicking captcha
-        driver.switchTo().frame(driver.findElement(By.xpath("//*[@id='recaptcha-token']")));
-        Thread.sleep(5000);
-        driver.findElement(By.cssSelector(".recaptcha-checkbox-border")).click();
-        driver.switchTo().defaultContent();
-        Thread.sleep(5000);
+
         driver.findElement(By.cssSelector(".SaveBtn.mt-2")).click();
         driver.quit();
 
