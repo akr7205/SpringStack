@@ -34,10 +34,13 @@ public class DemoTest {
         driver.findElement(By.cssSelector("input[placeholder='Student No.']")).sendKeys("23500");
         driver.findElement(By.cssSelector("input[placeholder='Ticket Title *']")).sendKeys("tickettile");
         //clicking captcha
-
-
+        driver.switchTo().frame(driver.findElement(By.xpath("//*[@id='recaptcha-token']")));
+        Thread.sleep(5000);
+        driver.findElement(By.cssSelector(".recaptcha-checkbox-border")).click();
+        driver.switchTo().defaultContent();
+        Thread.sleep(5000);
         driver.findElement(By.cssSelector(".SaveBtn.mt-2")).click();
-
+        driver.quit();
 
 
     }
